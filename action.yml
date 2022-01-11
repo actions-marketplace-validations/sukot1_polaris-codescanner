@@ -17,10 +17,6 @@ inputs:
   POLARIS_PROJECT_BRANCH:
     required: true
     description: "Polaris project branch for scan results"
-  INSTALL_COVERITY_VERSION:
-    required: false
-    description: "Coverity version to be used for scanning"
-    default: "default"
 runs:
   using: "composite"
   steps:
@@ -36,6 +32,6 @@ runs:
         export POLARIS_SERVER_URL=${{ inputs.polaris_server_url }}
         export POLARIS_REPO_NAME=${{ inputs.polaris_project_name }}
         export GIT_BRANCH=${{inputs.polaris_project_branch}}
-        /tmp/polaris ${{ inputs.polaris_command_opts }} install.coverity.version=\"${{inputs.install_coverity_version}}\" project.name=\"${{ inputs.polaris_project_name }}\" analyze -w 
+        /tmp/polaris ${{ inputs.polaris_command_opts }} project.name=\"${{ inputs.polaris_project_name }}\" analyze -w 
         cat .synopsys/polaris/cli-scan.json
       shell: bash
