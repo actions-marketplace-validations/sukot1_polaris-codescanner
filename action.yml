@@ -10,7 +10,7 @@ inputs:
   POLARIS_COMMAND_OPTS:
     required: false
     description: "Polaris command line options"
-    default: "--co"
+    default: " "
   POLARIS_PROJECT_NAME:
     required: true
     description: "Polaris Project for scan results"
@@ -32,6 +32,6 @@ runs:
         export POLARIS_SERVER_URL=${{ inputs.polaris_server_url }}
         export POLARIS_REPO_NAME=${{ inputs.polaris_project_name }}
         export GIT_BRANCH=${{inputs.polaris_project_branch}}
-        /tmp/polaris ${{ inputs.polaris_command_opts }} project.name=\"${{ inputs.polaris_project_name }}\" analyze -w 
+        /tmp/polaris ${{ inputs.polaris_command_opts }} --co project.name=\"${{ inputs.polaris_project_name }}\" analyze -w 
         cat .synopsys/polaris/cli-scan.json
       shell: bash
