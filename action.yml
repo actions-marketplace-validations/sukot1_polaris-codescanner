@@ -31,7 +31,6 @@ runs:
         export POLARIS_ACCESS_TOKEN=${{ inputs.polaris_access_token }}
         export POLARIS_SERVER_URL=${{ inputs.polaris_server_url }}
         export POLARIS_REPO_NAME=${{ inputs.polaris_repo_name }}
-        #cp ./${{ inputs.polaris_repo_name }}/polaris.yaml . && 
         /tmp/polaris ${{ inputs.polaris_command_opts }} project.name=\"${{ inputs.polaris_repo_name }}\" analyze -w 
-        #cat .synopsys/polaris/cli-scan.json
+        cat .synopsys/polaris/cli-scan.json
       shell: bash
