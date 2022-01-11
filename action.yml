@@ -11,12 +11,12 @@ inputs:
     required: false
     description: "Polaris command line options"
     default: "--co"
-  POLARIS_REPO_NAME:
+  POLARIS_PROJECT_NAME:
     required: true
-    description: "Repository Name to scan"
-  POLARIS_REPO_BRANCH:
+    description: "Polaris Project for scan results"
+  POLARIS_PROJECT_BRANCH:
     required: true
-    description: "Repository Branch Name to scan"
+    description: "Polaris project branch for scan results"
 runs:
   using: "composite"
   steps:
