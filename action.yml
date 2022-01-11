@@ -1,0 +1,36 @@
+name: 'PolScan'
+description: "SAST Polaris Scan"
+inputs:
+  POLARIS_SERVER_URL:
+    description: "Polaris server URL"
+    required: true
+  POLARIS_ACCESS_TOKEN:
+    description: "Polaris server access token"
+    required: true
+  POLARIS_COMMAND_OPTS:
+    required: false
+    description: "Polaris command line options"
+    default: "--co"
+  POLARIS_REPO_NAME:
+    required: true
+    description: "Repository Name to scan"
+  POLARIS_REPO_BRANCH:
+    required: true
+    description: "Repository Branch Name to scan"
+runs:
+  using: "composite"
+  steps:
+    - name: Downloading SAST Polaris CLI
+      run: wget -q ${{ inputs.polaris_server_url }}/api/tools/polaris_cli-linux64.zip
+      shell: bash
+    - name: Extracting polaris_cli-linux64.zip to tmp
+      run: unzip -j polaris_cli-linux64.zip -d /tmp
+      shell: bash
+    - name: Running Scan
+      run: |
+        export POLARIS_ACCESS_TOKEN=${{ inputs.polaris_access_token }}
+        export POLARIS_SERVER_URL=${{ inputs.polaris_server_url }}
+        export POLARIS_REPO_NAME=${{ inputs.polaris_repo_name }}
+        cp ./${{ inputs.polaris_repo_name }}/polaris.yaml . && /tmp/polaris ${{ inputs.polaris_command_opts }} project.name=\"${{ inputs.polaris_repo_name }}\" analyze -w 
+        cat .synopsys/polaris/cli-scan.json
+      shell: bash
