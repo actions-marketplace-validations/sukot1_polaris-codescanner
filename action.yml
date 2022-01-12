@@ -1,5 +1,5 @@
-name: 'PolScan'
-description: "SAST Polaris Scan"
+name: 'Polaris Code Scanner'
+description: "SAST Polaris Scan action for 64 bit Linux runners"
 inputs:
   POLARIS_SERVER_URL:
     description: "Polaris server URL"
