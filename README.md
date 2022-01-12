@@ -1,4 +1,4 @@
-# sk-myaction
+# polaris-codescanner
 A custom action to run Polaris code scan for SAST. The script looks for polaris.yaml file if present in the root dir of the code repo else generates it dynamically with supplied inputs and default values.
 
 ## Inputs
