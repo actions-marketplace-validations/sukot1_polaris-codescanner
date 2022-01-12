@@ -17,7 +17,7 @@ A custom action to run Polaris code scan for SAST. The script looks for polaris.
 ### Minimum configuration in action workflow
 
 ```yaml
-uses: sukot1/sk-myaction@v0.01
+uses: sukot1/polaris-codescanner@v0.01
   with:
     POLARIS_SERVER_URL: <<your_server_url>>
     POLARIS_ACCESS_TOKEN: <<your_access_token>>
@@ -27,7 +27,7 @@ uses: sukot1/sk-myaction@v0.01
 
 ### Using custom config file
 ```yaml
-uses: sukot1/sk-myaction@v0.01
+uses: sukot1/polaris-codescanner@v0.01
   with:
     POLARIS_SERVER_URL: <<your_server_url>>
     POLARIS_ACCESS_TOKEN: <<your_access_token>>
@@ -37,7 +37,7 @@ uses: sukot1/sk-myaction@v0.01
 ```
 ### Using command line options
 ```yaml
-uses: sukot1/sk-myaction@v0.01
+uses: sukot1/polaris-codescanner@v0.01
   with:
     POLARIS_SERVER_URL: <<your_server_url>>
     POLARIS_ACCESS_TOKEN: <<your_access_token>>
