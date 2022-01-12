@@ -45,4 +45,4 @@ uses: sukot1/sk-myaction@v0.01
     POLARIS_PROJECT_BRANCH: <<your_branch_name>>
     POLARIS_COMMAND_OPTS: "--co install.coverity.version='default' --co analyze.mode='central'"
 ```
-> Please refer to Synopsis official [documentation](https://sig-docs.synopsys.com/polaris/topics/c_cli-config-overrides.html?hl=install%2Ccoverity%2Cversion) for a full list of supported CLI options for code scanning.
+> Please refer to Synopsys official [documentation](https://sig-docs.synopsys.com/polaris/topics/c_cli-config-overrides.html?hl=install%2Ccoverity%2Cversion) for a full list of supported CLI options for code scanning.
